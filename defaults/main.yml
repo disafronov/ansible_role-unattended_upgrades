@@ -1,0 +1,10 @@
+unattended_upgrades_enable: true
+
+unattended_upgrades_reboot: true
+unattended_upgrades_reboot_time: "06:45"
+
+unattended_upgrades_update_calendar: "*-*-* 6,18:00"
+unattended_upgrades_update_delay: "12h"
+
+unattended_upgrades_upgrade_calendar: "*-*-* 22:00"
+unattended_upgrades_upgrade_delay: "60m"
