@@ -1,0 +1,11 @@
+- name: Restart unattended-upgrades service
+  ansible.builtin.systemd:
+    state: restarted
+    enabled: true
+    masked: false
+    daemon_reload: true
+    name: unattended-upgrades.service
+
+- name: Reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
