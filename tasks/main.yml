@@ -27,7 +27,7 @@
   ansible.builtin.copy:
     content: |
       Unattended-Upgrade::Origins-Pattern {
-          "{{ unattended_upgrades_Origins-Pattern }}"
+          "{{ unattended_upgrades_origins_pattern }}"
       };
     dest: /etc/apt/apt.conf.d/58unattended-upgrades_origins
     owner: root
@@ -36,7 +36,7 @@
   notify: Restart unattended-upgrades service
   tags:
     - unattended_upgrades
-  when: unattended_upgrades_Origins-Pattern is defined
+  when: unattended_upgrades_origins_pattern is defined
 
 - name: Template a file to /etc/apt/apt.conf.d/59unattended-upgrades_settings
   ansible.builtin.copy:
