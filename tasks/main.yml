@@ -78,6 +78,7 @@
   notify: Reload systemd
   tags:
     - unattended_upgrades
+  when: unattended_upgrades_update_calendar is defined
 
 - name: Template a file to /etc/systemd/system/apt-daily-upgrade.timer
   ansible.builtin.copy:
@@ -100,3 +101,4 @@
   notify: Reload systemd
   tags:
     - unattended_upgrades
+  when: unattended_upgrades_upgrade_calendar is defined
