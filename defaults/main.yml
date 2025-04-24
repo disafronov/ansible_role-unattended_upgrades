@@ -1,14 +1,14 @@
 unattended_upgrades_enable: true
 
-unattended_upgrades_AutoFixInterruptedDpkg: true
-unattended_upgrades_MinimalSteps: true
-unattended_upgrades_InstallOnShutdown: false
-unattended_upgrades_Mail: ""
-unattended_upgrades_MailReport: "on-change"
-unattended_upgrades_Remove_Unused_Dependencies: true
-unattended_upgrades_Automatic_Reboot: true
-unattended_upgrades_Automatic_Reboot_WithUsers: false
-unattended_upgrades_Automatic_Reboot_Time: "06:45"
+unattended_upgrades_autofixinterrupteddpkg: true
+unattended_upgrades_minimalsteps: true
+unattended_upgrades_installonshutdown: false
+unattended_upgrades_mail: ""
+unattended_upgrades_mailreport: "on-change"
+unattended_upgrades_remove_unused_dependencies: true
+unattended_upgrades_automatic_reboot: true
+unattended_upgrades_automatic_reboot_withusers: false
+unattended_upgrades_automatic_reboot_time: "06:45"
 
 unattended_upgrades_update_delay: "12h"
 
