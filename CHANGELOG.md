@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2025-04-24
+
+### 🚀 Features
+
+- Calendar
+- [**breaking**] Origins
+- 59unattended-upgrades_settings
+
+### 🐛 Bug Fixes
+
+- Var
+- Linter errors
+- Vars
+
+### 🚜 Refactor
+
+- 20auto-upgrades
+
 ## [1.1.0] - 2024-09-03
 
 ### 🚀 Features
