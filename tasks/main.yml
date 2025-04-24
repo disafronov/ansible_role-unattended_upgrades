@@ -23,21 +23,19 @@
   tags:
     - unattended_upgrades
 
-- name: Template a file to /etc/apt/apt.conf.d/50unattended-upgrades
+- name: Template a file to /etc/apt/apt.conf.d/59unattended-upgrades_settings
   ansible.builtin.copy:
     content: |
-      Unattended-Upgrade::Origins-Pattern {
-          "o=*";
-      };
-      Unattended-Upgrade::AutoFixInterruptedDpkg "true";
-      Unattended-Upgrade::MinimalSteps "true";
-      Unattended-Upgrade::InstallOnShutdown "false";
-      Unattended-Upgrade::Mail "root";
-      Unattended-Upgrade::MailOnlyOnError "false";
-      Unattended-Upgrade::Remove-Unused-Dependencies "true";
-      Unattended-Upgrade::Automatic-Reboot-Time "{{ unattended_upgrades_reboot_time | default('06:45') }}";
-      Unattended-Upgrade::Automatic-Reboot "{{ unattended_upgrades_reboot | default(true) | bool }}";
-    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+      Unattended-Upgrade::AutoFixInterruptedDpkg "{{ unattended_upgrades_AutoFixInterruptedDpkg | default("true") }}";
+      Unattended-Upgrade::MinimalSteps "{{ unattended_upgrades_MinimalSteps | default("true") }}";
+      Unattended-Upgrade::InstallOnShutdown "{{ unattended_upgrades_InstallOnShutdown | default("false") }}";
+      Unattended-Upgrade::Mail "{{ unattended_upgrades_Mail | default("") }}";
+      Unattended-Upgrade::MailReport "{{ unattended_upgrades_MailReport | default("on-change") }}";
+      Unattended-Upgrade::Remove-Unused-Dependencies "{{ unattended_upgrades_Remove-Unused-Dependencies | default("true") }}";
+      Unattended-Upgrade::Automatic-Reboot "{{ unattended_upgrades_Automatic-Reboot | default("true") }}";
+      Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ unattended_upgrades_Automatic-Reboot-WithUsers | default("false") }}";
+      Unattended-Upgrade::Automatic-Reboot-Time "{{ unattended_upgrades_Automatic-Reboot-Time | default("06:45") }}";
+    dest: /etc/apt/apt.conf.d/59unattended-upgrades_settings
     owner: root
     group: root
     mode: "0644"
